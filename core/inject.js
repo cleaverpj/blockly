@@ -37,7 +37,7 @@ goog.require('goog.dom');
  */
 Blockly.inject = function(container, opt_options) {
   // Verify that the container is in document.
-  if (!goog.dom.contains(document, container)) {
+  if (!opt_options.is_web_component && !goog.dom.contains(document, container)) {
     throw 'Error: container is not in current document.';
   }
   if (opt_options) {
